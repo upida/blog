@@ -8,7 +8,7 @@ fetch(url)
     data.forEach(function(i,key) {
         let item = '<div class="article-item">';
         let title = '';
-        if(key == 1){
+        if(key==0){
             title = '<div class="article-title show">'+i.title+'</div>';
         }else{
             title = '<div class="article-title">'+i.title+'</div>';
