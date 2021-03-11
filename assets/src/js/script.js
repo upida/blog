@@ -1,38 +1,24 @@
-getArticles();
+const content = document.getElementById("content");
+const url = "data.json";
+var article = "";
 
-$(document).ready(function() {
-    showArticle(0);
-    $('.article-title').click(function(){
-        let id = $(this).parent(".article-item").attr('id');
-        let parent = $(".article-title.show").parent().attr('id');
- 
-        if(id != parent){
-            $(".article-title.show").removeClass("show");
-            $(".article-item .article-body").hide( "fast");
-            showArticle(id);
-        }
- 
+fetch(url)
+.then((resp) => resp.json())
+.then(function(data) {
+    data.forEach(function(i) {
+        let item = '<div class="article-item">';
+        let title = '<div class="article-title">'+i.title+'</div>';
+        let body = '<div class="article-body"><div class="article-date">'+i.date+'</div>';
+        let text = '<div class="article-text">'+i.content+'</div></div></div>';
+        article += item+title+body+text;
     });
-    
+    content.innerHTML = article;
+
+    $('.article-title').click(function(){
+        $(".article-title.show").removeClass("show");
+        $(this).addClass("show");
+    });
+})
+.catch(function(error){
+    console.log(error);
 });
-
-function showArticle(id){
-    $(`.article-item#${id} .article-title`).addClass("show");
-    $(`.article-item#${id} .article-body`).show( "fast");
-}
-
-function getArticles() {
-    $.get(
-        'data.json',
-        function (data) {
-             data.forEach((e, key) => {
-                let id = key;
-                let title = e.title;
-                let date = e.date;
-                let content = e.content;
-                var articles = '<div class="article-item" id="'+id+'"><div class="article-title">'+title+'</div><div class="article-body"><div class="article-date">'+date+'</div><div class="article-text">'+content+'</div></div></div>';
-                $("#content").append(articles);
-             });
-        }
-    );
-}
