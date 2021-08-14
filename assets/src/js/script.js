@@ -40,7 +40,7 @@ window.onload = function() {
             var pathparts = location.pathname.split('/');
             var url = root+'/'+pathparts[1].trim('/')+'/'+pathparts[2].trim('/')+'/';
 
-            console.log('url', url);
+            console.log(url);
             
             this.lastScrollPosition = window.pageYOffset;
             window.addEventListener('scroll', this.onScroll);
