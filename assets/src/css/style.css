@@ -116,8 +116,7 @@ nav {
 }
 
 .article-title,
-.menu-item,
-.find_me-title {
+.menu-item {
 	padding: 20px;
 	font-size: large;
 	cursor: pointer;
@@ -185,6 +184,49 @@ nav {
 	margin-left: 5px;
 }
 
+/* find me */
+.find_me {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 20px;
+	padding: 5px;
+}
+
+.find_me-item {
+	position: relative;
+	display: flex;
+	width: 90%;
+	margin: auto;
+	border-radius: 50px;
+	border: 1px solid #ddd;
+	padding: 0 10px;
+}
+
+.find_me-item > [class] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.find_me-icon {
+	width: 10%;
+}
+
+.find_me-body {
+	width: 80%;
+}
+
+.find_me-link {
+	width: 10%;
+}
+
+.find_me-icon > img {
+	position: relative;
+	width: 50px;
+	height: auto;
+	padding: 20%;
+}
+
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
@@ -231,5 +273,9 @@ nav {
 	.menu,
 	.find_me {
 		width: 100%;
+	}
+
+	.find_me {
+		grid-template-columns: auto;
 	}
 }
