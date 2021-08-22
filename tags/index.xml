@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Upida</title>
+    <link>https://upida.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Upida</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Aug 2021 11:24:45 +0700</lastBuildDate><atom:link href="https://upida.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>notes</title>
+      <link>https://upida.github.io/blog/tags/notes/</link>
+      <pubDate>Sun, 22 Aug 2021 11:24:45 +0700</pubDate>
+      
+      <guid>https://upida.github.io/blog/tags/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://upida.github.io/blog/tags/test/</link>
+      <pubDate>Sun, 22 Aug 2021 11:24:45 +0700</pubDate>
+      
+      <guid>https://upida.github.io/blog/tags/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

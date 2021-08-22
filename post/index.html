@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://upida.github.io/blog/src/img/logo-upida.png" type="image/x-icon" />
+    <title>Upida's Blog</title>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="https://upida.github.io/blog/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://upida.github.io/blog/src/css/style.css" />
+</head>
+<link rel="stylesheet" href="https://upida.github.io/blog/src/css/list.css">
+
+<body>
+    <main id="app" v-cloak>
+
+      
+      <nav class="nav">
+    <div class="nav-menu"
+        v-on="page == 'menu' ? { click: () => page = 'home' } : { click: () => page = 'menu'}">
+        <div class="nav-menu-icon">
+            <i class="fa fa-close" v-if="page == 'menu'"></i>
+            <i class="fa fa-bars" v-else></i>
+        </div>
+        <div class="nav-menu-text">
+            MENU
+        </div>
+    </div>
+    <div class="nav-logo">
+        UP<transition name="slide-fade">
+            <div v-show="showFullLogo">IDA</div>
+        </transition>.
+    </div>
+    <div class="nav-find_me"
+        v-on="page == 'find me' ? { click: () => page = 'home' } : { click: () => page = 'find me' }">
+        <i class="fa fa-close" v-if="page == 'find me'"></i>
+        <div v-else>FIND ME</div>
+    </div>
+</nav>
+
+      
+      <transition name="slide-fade">
+        <div class="list" v-if="page == 'home'">
+          <header>
+            <div class="header">
+              <div class="header-content">
+                <div class="header-desc">
+                  <span class="text-muted">
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="article">
+            
+              <div class="article-item">
+                  <a href="https://upida.github.io/blog/notes/">
+                      <div class="article-title show">
+                          Notes
+                      </div>
+                  </a>
+                  <div class="article-date">
+                      Sun, Aug 22, 2021
+                  </div>
+                  <div class="article-body">
+                      <p>ini bukan tes tapi no tes</p>
+
+                  </div>
+              </div>
+              
+              <div class="article-item">
+                  <a href="https://upida.github.io/blog/test-lagi/">
+                      <div class="article-title show">
+                          Test Lagi
+                      </div>
+                  </a>
+                  <div class="article-date">
+                      Sun, Aug 22, 2021
+                  </div>
+                  <div class="article-body">
+                      <p>ini testing dengan content panjang.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis accumsan metus. Quisque mattis turpis iaculis …</p>
+                  </div>
+              </div>
+              
+              <div class="article-item">
+                  <a href="https://upida.github.io/blog/test/">
+                      <div class="article-title show">
+                          Test
+                      </div>
+                  </a>
+                  <div class="article-date">
+                      Fri, Aug 20, 2021
+                  </div>
+                  <div class="article-body">
+                      <p>Test</p>
+
+                  </div>
+              </div>
+              
+          </div>
+        </div>
+      </transition>
+      
+      
+      <transition name="slide-fade">
+        <div class="menu" v-if="page == 'menu'">
+            <div class="menu-main">
+    <div class="menu-item">
+        <div class="menu-icon">
+            <a href="/">
+                <i class="fa fa-home"></i>
+            </a>
+        </div>
+        <div class="menu-title">
+            <a href="/">
+                Home
+            </a>
+        </div>
+    </div>
+    <div class="menu-item" @click="page = 'find me'">
+        <div class="menu-icon">
+            <i class="fa fa-address-book"></i>
+        </div>
+        <div class="menu-title">
+            Contact
+        </div>
+    </div>
+</div>
+<div class="menu-tag">
+     
+        
+            <div class="menu-item">
+                <a href="/blog/tags/notes/" >#notes</a>
+            </div>
+        
+     
+        
+            <div class="menu-item">
+                <a href="/blog/tags/test/" >#test</a>
+            </div>
+        
+    
+</div>
+        </div>
+      </transition>
+
+      
+      <transition name="slide-fade">
+          <div class="find_me" v-if="page == 'find me'">
+              <div class="find_me-item">
+    <div class="find_me-icon">
+        <img src="https://upida.github.io/blog/src/img/Instagram_icon.png.webp" alt="" srcset="">
+    </div>
+    <div class="find_me-body">
+        sal.upida
+    </div>
+    <div class="find_me-link">
+        <a href="https://instagram.com/sal.upida">
+            <i class="fa fa-external-link"></i>
+        </a>
+    </div>
+</div>
+<div class="find_me-item">
+    <div class="find_me-icon">
+        <img src="https://upida.github.io/blog/src/img/Twitter_bird_logo_2012.svg.png" alt="" srcset="">
+    </div>
+    <div class="find_me-body">
+        upidaaa
+    </div>
+    <div class="find_me-link">
+        <a href="https://twitter.com/upidaaa">
+            <i class="fa fa-external-link"></i>
+        </a>
+    </div>
+</div>
+<div class="find_me-item">
+    <div class="find_me-icon">
+        <img src="https://upida.github.io/blog/src/img/600px-Octicons-mark-github.svg.png" alt="" srcset="">
+    </div>
+    <div class="find_me-body">
+        upida
+    </div>
+    <div class="find_me-link">
+        <a href="https://github.com/upida">
+            <i class="fa fa-external-link"></i>
+        </a>
+    </div>
+</div>
+          </div>
+      </transition>
+
+    </main>
+
+    
+<script type="text/javascript" src="https://unpkg.com/vue@next"></script>
+    
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+<script type="text/javascript" src="https://upida.github.io/blog/dist/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://upida.github.io/blog/src/js/script.js"></script>
+
+</body>
+
+</html>

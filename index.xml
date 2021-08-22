@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upida</title>
+    <link>https://upida.github.io/blog/</link>
+    <description>Recent content on Upida</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Aug 2021 11:24:45 +0700</lastBuildDate><atom:link href="https://upida.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes</title>
+      <link>https://upida.github.io/blog/notes/</link>
+      <pubDate>Sun, 22 Aug 2021 11:24:45 +0700</pubDate>
+      
+      <guid>https://upida.github.io/blog/notes/</guid>
+      <description>ini bukan tes tapi no tes</description>
+    </item>
+    
+    <item>
+      <title>Test Lagi</title>
+      <link>https://upida.github.io/blog/test-lagi/</link>
+      <pubDate>Sun, 22 Aug 2021 10:07:29 +0700</pubDate>
+      
+      <guid>https://upida.github.io/blog/test-lagi/</guid>
+      <description>ini testing dengan content panjang. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis accumsan metus. Quisque mattis turpis iaculis erat sollicitudin lobortis. Mauris ut accumsan nunc, maximus dapibus enim. Vivamus in enim a leo lacinia commodo vel sit amet dui. Nullam gravida, est ut fringilla mollis, velit nulla venenatis est, nec molestie ligula metus et sem. Phasellus ut ipsum dui. Aliquam sagittis maximus lacus. Donec blandit justo arcu, id tincidunt ante fermentum eu.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://upida.github.io/blog/test/</link>
+      <pubDate>Fri, 20 Aug 2021 23:49:40 +0700</pubDate>
+      
+      <guid>https://upida.github.io/blog/test/</guid>
+      <description>Test</description>
+    </item>
+    
+  </channel>
+</rss>
