@@ -1,0 +1,12 @@
+.single-content {
+	position: relative;
+	width: 900px;
+	margin: 5% auto;
+}
+
+@media screen and (max-width: 991px) {
+	.single-content {
+		width: 90%;
+		margin: auto;
+	}
+}

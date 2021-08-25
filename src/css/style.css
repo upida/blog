@@ -115,6 +115,7 @@ nav {
 .article,
 .menu,
 .find_me {
+	position: relative;
 	width: 900px;
 	margin: 5% auto;
 }
@@ -293,9 +294,12 @@ nav {
 	}
 
 	.article,
-	.menu,
 	.find_me {
 		width: 100%;
+	}
+
+	.menu {
+		width: 90%;
 	}
 
 	.find_me {
