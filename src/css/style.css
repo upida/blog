@@ -163,6 +163,10 @@ nav {
 	font-weight: 500;
 }
 
+.article-body p img {
+	display: none;
+}
+
 /* menu */
 .menu-icon > a,
 .menu-title > a {
