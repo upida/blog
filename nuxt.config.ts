@@ -16,6 +16,9 @@ export default defineNuxtConfig({
         base: './content'
       }
     }
+  },
+  routeRules: {
+    '/.well-known/**': { cache: false, ssr: false }
   }
 })
 
