@@ -19,5 +19,5 @@ COPY --from=build /home/bun/app/.output ./.output
 
 COPY --from=build /home/bun/app/content ./content
 
-EXPOSE 8080
+EXPOSE 3000
 CMD [ "bun", "--bun", "run", "./.output/server/index.mjs" ]
