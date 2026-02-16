@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Public Sans', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  color-scheme: light;
+  
+  ::selection {
+    color: #282a30;
+    background-color: #c8c8c8;
+  }
+}
+
+html.dark {
+  color-scheme: dark;
+  @apply bg-slate-950 text-white;
+}
+
+html.dark ::selection {
+  color: #ffffff;
+  background-color: #474747;
+}
+
+/* Dark mode overrides */
+html.dark {
+  background-color: rgb(15, 23, 42);
+  color: white;
+}
+
+html.dark .bg-white {
+  @apply bg-slate-950;
+}
+
+html.dark .text-black {
+  @apply text-white;
+}
+
+html.dark .bg-gray-200 {
+  @apply bg-gray-800;
+}
+
+html.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+html.dark .border-gray-200 {
+  @apply border-gray-800;
+}
+
+/* Navbar dark mode */
+html.dark nav {
+  @apply bg-slate-950/80 border-gray-900;
+  backdrop-filter: blur(50px);
+}
+
+html.dark nav a {
+  @apply text-gray-400 hover:text-white;
+}
+
+/* Navbar glassmorphism effect - light mode */
+nav {
+  background-color: rgba(255, 255, 255, 0.50);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+}
+
+/* Navbar glassmorphism effect - dark mode */
+html.dark nav {
+  background-color: rgba(15, 23, 42, 0.50);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+}
+
+/* Bounce animation - coming back to top (smooth, no fade) */
+@keyframes navBounce {
+  0% {
+    transform: translateY(20px);
+    opacity: 1;
+    border-radius: 1rem;
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    border-radius: 0;
+  }
+}
+
+/* Release animation - going to bubble (smooth, no fade) */
+@keyframes navRelease {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    border-radius: 0;
+  }
+  30% {
+    transform: translateY(-8px);
+    border-radius: 0.4rem;
+  }
+  60% {
+    transform: translateY(20px);
+    border-radius: 0.8rem;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 1;
+    border-radius: 1rem;
+  }
+}
+
+nav.bounce-in {
+  animation: navBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+nav.bounce-out {
+  animation: navRelease 1.2s ease-in-out;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
