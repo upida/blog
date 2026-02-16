@@ -19,7 +19,11 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/.well-known/**': { cache: false, ssr: false }
-  }
+  },
+  nitro: {
+    host: '0.0.0.0',
+    port: 3000
+  },
 })
 
 
