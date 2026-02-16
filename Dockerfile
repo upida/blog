@@ -19,5 +19,8 @@ COPY --from=build /home/bun/app/.output ./.output
 
 COPY --from=build /home/bun/app/content ./content
 
+ENV PORT=5000
+ENV HOST=0.0.0.0
+
 EXPOSE 5000
 CMD [ "bun", "--bun", "run", "./.output/server/index.mjs" ]
