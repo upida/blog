@@ -1,18 +1,31 @@
-FROM oven/bun:latest
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:1 AS build
 
-WORKDIR /app
+WORKDIR /home/bun/app
 
-COPY package.json bun.lock ./
+COPY package.json bun.lock* ./
 
-RUN bun install --frozen-lockfile
+# use ignore-scripts to avoid building node modules like better-sqlite3
+RUN bun install --frozen-lockfile --ignore-scripts
 
+# Copy the entire project
 COPY . .
 
-# Aggressive memory optimization untuk VPS
-ENV NODE_OPTIONS="--max-old-space-size=3072 --max-http-header-size=16384"
+RUN bun --bun run build
 
-RUN bun run build
+# copy production dependencies and source code into final image
+FROM oven/bun:1 AS production
 
-EXPOSE 3000
+WORKDIR /home/bun/app
 
-CMD ["bun", "run", "preview"]
+# Copy node_modules and .output from build stage
+COPY --from=build /home/bun/app/node_modules ./node_modules
+COPY --from=build /home/bun/app/.output ./.output
+
+# Copy content folder for server to read
+COPY --from=build /home/bun/app/content ./content
+
+# run the app
+EXPOSE 3000/tcp
+CMD [ "bun", "--bun", "run", "./.output/server/index.mjs" ]
