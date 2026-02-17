@@ -76,11 +76,11 @@ const latestProjects = computed(() => {
     <!-- Projects Section -->
     <section class="w-full mx-auto mt-40 px-6 py-12">
       <div class="mb-12">
-        <h2 class="text-4xl font-medium text-black dark:text-white mb-4 font-sans">
-          Latest Projects
+        <h2 class="text-4xl font-medium mb-4 font-sans text-black dark:text-white">
+          {{ pageData?.projects?.title }}
         </h2>
         <p class="text-gray-600 dark:text-gray-400">
-          Some of my recent work
+          {{ pageData?.projects?.description }}
         </p>
       </div>
       <ProjectsList

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-slate-950 flex flex-col items-center justify-center px-6 py-12">
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-white dark:bg-slate-950">
     <div class="text-center max-w-md">
       <!-- Error Icon -->
       <div class="mb-8">
@@ -51,6 +51,34 @@ defineProps({
     default: null,
   },
 })
+
+const isDark = ref(false)
+
+onMounted(() => {
+  const stored = localStorage.getItem('theme')
+  if (stored) {
+    isDark.value = stored === 'dark'
+  } else {
+    // Default to light mode if no preference saved
+    isDark.value = false
+  }
+
+  applyTheme()
+})
+
+const applyTheme = () => {
+  const html = document.documentElement
+  // IMPORTANT: sync dark class exactly with isDark value
+  if (isDark.value) {
+    html.classList.remove('light')
+    html.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    html.classList.remove('dark')
+    html.classList.add('light')
+    localStorage.setItem('theme', 'light')
+  }
+}
 
 const emit = defineEmits(['clear'])
 

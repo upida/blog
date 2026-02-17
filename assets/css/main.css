@@ -2,10 +2,21 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* IMPORTANT: Force light mode by default, ignore system preference */
+html {
+  color-scheme: light !important;
+}
+
+/* Only apply dark mode when class is explicitly added */
+html.dark {
+  color-scheme: dark !important;
+}
+
 :root {
   --font-sans: 'Public Sans', sans-serif;
   --font-serif: 'Instrument Serif', serif;
-  color-scheme: light;
   
   ::selection {
     color: #282a30;

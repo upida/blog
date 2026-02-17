@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  darkMode: 'class',
   content: [
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
@@ -17,7 +16,7 @@ export default {
         serif: ['var(--font-serif)', 'ui-serif', 'Georgia', 'serif'],
       },
       colors: {
-        primary: '#000000',
+        primary: '#f0b100',
       },
     },
   },
