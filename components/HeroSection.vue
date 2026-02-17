@@ -40,7 +40,7 @@ const getIconName = (label: string) => {
       transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
       transition: 'all 700ms ease-out'
     }"
-    class="flex flex-col items-center justify-center min-h-screen pt-20 px-6 py-12"
+    class="flex flex-col items-center justify-center min-h-screen pt-20 px-6 py-12 w-full"
     <!-- Profile Image Badge -->
     <div class="mb-8">
       <div 
@@ -73,7 +73,7 @@ const getIconName = (label: string) => {
     </h1>
 
     <!-- Description -->
-    <div v-if="isLoading" class="mb-12 w-full max-w-2xl">
+    <div v-if="isLoading" class="mb-12 w-full">
       <div 
         :style="{
           backgroundColor: isDark ? 'rgba(55, 65, 81, 1)' : 'rgba(229, 231, 235, 1)'
@@ -92,7 +92,7 @@ const getIconName = (label: string) => {
     </p>
 
     <!-- Social Links -->
-    <div v-if="isLoading" class="flex gap-8">
+    <div v-if="isLoading" class="flex gap-8 w-full justify-center">
       <div 
         v-for="i in 3" 
         :key="i" 

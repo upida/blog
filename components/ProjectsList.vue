@@ -51,27 +51,36 @@ const displayItems = computed(() => {
         transition: `all 700ms ease-out ${isVisible ? idx * 100 : 0}ms`,
         transitionDelay: isVisible ? `${idx * 100}ms` : '0ms'
       }"
-      class="group flex gap-8 items-start hover:no-underline"
+      class="group flex flex-col md:flex-row gap-6 md:gap-8 items-start hover:no-underline"
     >
+      <!-- Image - top on mobile, right on desktop -->
+      <div v-if="item.image" class="w-full md:w-48 h-48 md:h-48 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-700 md:order-2 flex items-center justify-center">
+        <img 
+          :src="item.image" 
+          :alt="item.title"
+          class="w-full h-full object-contain"
+        />
+      </div>
+
       <!-- Content -->
-      <div class="flex-1">
+      <div class="flex-1 w-full md:order-1">
         <!-- Date -->
-        <p class="text-sm text-zinc-500 dark:text-gray-400 mb-3">
+        <p class="text-xs md:text-sm text-zinc-500 dark:text-gray-400 mb-2 md:mb-3">
           {{ item.date }}
         </p>
 
         <!-- Title -->
-        <h3 class="text-2xl font-bold text-black dark:text-white mb-4">
+        <h3 class="text-lg md:text-2xl font-bold text-black dark:text-white mb-2 md:mb-4">
           {{ item.title }}
         </h3>
 
         <!-- Description -->
-        <p class="text-zinc-500 dark:text-gray-500 text-sm leading-relaxed mb-6\">
+        <p class="text-zinc-500 dark:text-gray-500 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
           {{ item.description }}
         </p>
 
         <!-- Tags -->
-        <div class="flex flex-wrap gap-2 my-6">
+        <div class="flex flex-wrap gap-2 my-4 md:my-6">
           <span 
             v-for="tag in item.tags" 
             :key="tag"
@@ -80,29 +89,20 @@ const displayItems = computed(() => {
               borderColor: isDark ? '#3f3f46' : '#e4e4e7',
               backgroundColor: isDark ? '#09090b' : '#ffffff'
             }"
-            class="text-xs px-3 py-1 rounded-full border"
+            class="text-xs px-2 md:px-3 py-1 rounded-full border"
           >
             {{ tag }}
           </span>
         </div>
 
         <!-- View Project Link -->
-        <div class="flex items-center gap-2 text-yellow-500 font-medium text-sm">
+        <div class="flex items-center gap-2 text-yellow-500 font-medium text-xs md:text-sm">
           <span>View Project</span>
           <Icon 
             icon="lucide:arrow-right" 
             class="w-4 h-4 arrow-icon"
           />
         </div>
-      </div>
-
-      <!-- Image -->
-      <div v-if="item.image" class="w-48 h-48 flex-shrink-0 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-700">
-        <img 
-          :src="item.image" 
-          :alt="item.title"
-          class="w-full h-full object-cover"
-        />
       </div>
     </a>
   </div>
