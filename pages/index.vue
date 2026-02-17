@@ -19,10 +19,48 @@ const isLoading = ref(true)
 const { data: contentData } = useFetch('/api/content')
 const { data: projectsData } = useFetch('/api/projects')
 
+// Setup page-specific SEO
+const updateHeadSEO = () => {
+  useHead({
+    title: contentData.value?.seo?.title || 'Upida - Fullstack Developer',
+    meta: [
+      {
+        name: 'description',
+        content: contentData.value?.seo?.description || 'Fullstack developer building intelligent chatbots and scalable web applications'
+      },
+      {
+        property: 'og:title',
+        content: contentData.value?.seo?.title || 'Upida - Fullstack Developer'
+      },
+      {
+        property: 'og:description',
+        content: contentData.value?.seo?.description || 'Fullstack developer building intelligent chatbots and scalable web applications'
+      },
+      {
+        property: 'og:image',
+        content: contentData.value?.seo?.image || '/og-image.png'
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:title',
+        content: contentData.value?.seo?.title || 'Upida - Fullstack Developer'
+      },
+      {
+        name: 'twitter:description',
+        content: contentData.value?.seo?.description || 'Fullstack developer building intelligent chatbots and scalable web applications'
+      }
+    ]
+  })
+}
+
 onMounted(() => {
   if (contentData.value) {
     pageData.value = contentData.value
     isLoading.value = false
+    updateHeadSEO()
   }
 })
 
@@ -30,6 +68,7 @@ watch(contentData, (newVal) => {
   if (newVal) {
     pageData.value = newVal
     isLoading.value = false
+    updateHeadSEO()
   }
 })
 

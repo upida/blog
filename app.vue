@@ -46,45 +46,19 @@ provide('isDark', isDark)
 // Computed color for theme-color meta tag
 const color = computed(() => isDark.value ? '#020618' : 'ffffff')
 
-// Get index data for SEO - use useAsyncData for SSR compatibility
-const { data: indexData } = await useAsyncData('index-seo', () =>
-  queryContent('index').findOne()
-)
-
-// Setup Head
+// Setup Head - Global config only
 useHead({
-  title: indexData.value?.seo?.title || 'Upida - Fullstack Developer',
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { key: 'theme-color', name: 'theme-color', content: color },
     {
-      name: 'description',
-      content: indexData.value?.seo?.description || 'Fullstack developer portfolio'
-    },
-    {
-      property: 'og:title',
-      content: indexData.value?.seo?.title || 'Upida - Fullstack Developer'
-    },
-    {
-      property: 'og:description',
-      content: indexData.value?.seo?.description || 'Fullstack developer portfolio'
-    },
-    {
       property: 'og:type',
       content: 'website'
-    },
-    {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
-      name: 'twitter:title',
-      content: indexData.value?.seo?.title || 'Upida - Fullstack Developer'
     }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/upida.ico' }
   ],
   htmlAttrs: {
     lang: 'en'

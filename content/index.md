@@ -1,8 +1,8 @@
 ---
 seo:
-  title: "Upida - Fullstack Developer"
-  description: "Welcome to my portfolio! I'm Upida, a fullstack developer based in Yogyakarta, Indonesia. I specialize in building scalable web applications and backend systems using modern technologies."
-title: "Hey, I'm Upida Fullstack Developer"
+  title: "Upida - Software Developer"
+  description: "Welcome to my portfolio! I'm Upida, a Software developer based in Yogyakarta, Indonesia. I specialize in building scalable web applications and backend systems using modern technologies."
+title: "Hey, I'm Upida Salma\nSoftware Developer"
 description: "I build intelligent chatbots with LLMs and extensive social media integrations. I create scalable dashboards and web apps using Laravel Inertia Vue, Go, and Nuxt. Let's discuss your project needs. Based in Yogyakarta, Indonesia."
 hero:
   links:
@@ -26,11 +26,11 @@ hero:
       variant: "outline"
 about:
   title: "About Me"
-  description: "I'm a fullstack developer with professional experience since 2020 in building scalable web applications and backend system integrated with lots of services. I work across the entire stack, from frontend interfaces to backend infrastructure, using a diverse range of technologies including Go, Laravel, Python, Node.js, Vue.js, and Nuxt.js.\n\nMy expertise spans both traditional and modern architectures, and I'm passionate about writing clean, maintainable code and implementing DevOps practices with Docker and deployment tools like Dokku."
+  description: "I'm a Software developer with professional experience since 2020 in building scalable web applications and backend system integrated with lots of services. I work across the entire stack, from frontend interfaces to backend infrastructure, using a diverse range of technologies including Go, Laravel, Python, Node.js, Vue.js, and Nuxt.js.\n\nMy expertise spans both traditional and modern architectures, and I'm passionate about writing clean, maintainable code and implementing DevOps practices with Docker and deployment tools like Dokku."
 experience:
   title: "Experience"
   items:
-    - position: "Fullstack Developer"
+    - position: "Software Developer"
       date: "2020 - Present"
       company:
         name: "Botika"
@@ -40,11 +40,11 @@ experience:
       company:
         name: "Google Dev Group Binus University Online"
         url: "https://gdg.community.dev/gdg-on-campus-binus-university-online-jakarta-indonesia/"
-    - position: "Project-Based Virtual Intern: Fullstack Developer"
+    - position: "Project-Based Virtual Intern: Software Developer"
       date: "2023"
       company:
         name: "Bank BTPN Syariah × Rakamin Academy"
-        url: "https://app.rakamin.com/virtual-internship-experience/fullstack-development-btpn-syariah"
+        url: "https://app.rakamin.com/virtual-internship-experience/Software-development-btpn-syariah"
 projects:
   title: "Latest Projects"
   description: "Some of my recent projects"
@@ -68,13 +68,13 @@ faq:
     - title: "Services & Expertise"
       questions:
         - label: "What services do you offer?"
-          content: "I provide fullstack development services including backend development (Go, Laravel, Python), frontend development (Vue.js, Nuxt.js), database design (MongoDB, PostgreSQL, MySQL), DevOps & deployment (Docker, Dokku), and embedded systems (Arduino). I can handle projects from planning and architecture to implementation and deployment."
+          content: "I provide Software development services including backend development (Go, Laravel, Python), frontend development (Vue.js, Nuxt.js), database design (MongoDB, PostgreSQL, MySQL), DevOps & deployment (Docker, Dokku), and embedded systems (Arduino). I can handle projects from planning and architecture to implementation and deployment."
         - label: "What's your tech stack?"
           content: "My primary tech stack includes: Backend (Go, Laravel, Python, PHP), Frontend (Vue.js, Nuxt.js, TypeScript, JavaScript), Databases (PostgreSQL, MongoDB, MySQL), DevOps & Infrastructure (Docker, Dokku), and Embedded (Arduino). I'm constantly learning and can adapt to new technologies based on project needs."
         - label: "Do you work with startups?"
           content: "Absolutely! I love working with startups and early-stage companies. I can help you design scalable architectures from day one, make good technology choices, and build MVPs efficiently. I'm flexible with timelines and can adjust my work style to match startup environments."
         - label: "Can you work on both frontend and backend?"
-          content: "Yes! That's one of my strengths. As a fullstack developer, I can handle an entire project end-to-end, which means better communication between layers and more cohesive solutions. I can also work on just the frontend or backend if that's what you need."
+          content: "Yes! That's one of my strengths. As a Software developer, I can handle an entire project end-to-end, which means better communication between layers and more cohesive solutions. I can also work on just the frontend or backend if that's what you need."
     - title: "Pricing & Timelines"
       questions:
         - label: "What are your rates?"
@@ -87,8 +87,8 @@ faq:
           content: "Yes! I offer maintenance, support, and ongoing development services. I can provide monthly retainers for clients who need continuous feature development, bug fixes, or platform improvements."
     - title: "About Me"
       questions:
-        - label: "Why fullstack development?"
-          content: "I enjoy the full lifecycle of building products—from understanding user needs, designing intuitive interfaces, and implementing robust backends. Being fullstack allows me to see the whole picture and make better architectural decisions. There's nothing quite like shipping complete features end-to-end."
+        - label: "Why Software development?"
+          content: "I enjoy the full lifecycle of building products—from understanding user needs, designing intuitive interfaces, and implementing robust backends. Being Software allows me to see the whole picture and make better architectural decisions. There's nothing quite like shipping complete features end-to-end."
         - label: "What's your coding philosophy?"
           content: "I believe in writing clean, maintainable code that other developers can understand and extend. I prioritize performance, security, and scalability. I also advocate for proper testing, documentation, and DevOps practices to ensure reliable deployments and minimal downtime."
 ---

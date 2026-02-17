@@ -14,10 +14,48 @@ const isLoading = ref(true)
 // Load data from server endpoint
 const { data: contentData } = useFetch('/api/projects')
 
+// Setup page-specific SEO
+const updateHeadSEO = () => {
+  useHead({
+    title: pageData.value?.seo?.title || 'Projects - Upida',
+    meta: [
+      {
+        name: 'description',
+        content: pageData.value?.seo?.description || 'Portfolio of my recent projects, case studies and technical work'
+      },
+      {
+        property: 'og:title',
+        content: pageData.value?.seo?.title || 'Projects - Upida'
+      },
+      {
+        property: 'og:description',
+        content: pageData.value?.seo?.description || 'Portfolio of my recent projects, case studies and technical work'
+      },
+      {
+        property: 'og:image',
+        content: pageData.value?.seo?.image || '/og-image.png'
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:title',
+        content: pageData.value?.seo?.title || 'Projects - Upida'
+      },
+      {
+        name: 'twitter:description',
+        content: pageData.value?.seo?.description || 'Portfolio of my recent projects, case studies and technical work'
+      }
+    ]
+  })
+}
+
 onMounted(() => {
   if (contentData.value) {
     pageData.value = contentData.value
     isLoading.value = false
+    updateHeadSEO()
   }
 })
 
@@ -25,6 +63,7 @@ watch(contentData, (newVal) => {
   if (newVal) {
     pageData.value = newVal
     isLoading.value = false
+    updateHeadSEO()
   }
 })
 </script>

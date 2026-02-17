@@ -1,6 +1,6 @@
 ---
 seo:
-  title: "Projects - Upida Fullstack Developer"
+  title: "Projects - Upida Software Developer"
   description: "A collection of my notable projects including web applications, chatbots, and APIs built with modern technologies."
 title: "Building End-to-End Solutions for Modern Applications"
 description: "I develop complete solutions from frontend to backend—responsive web applications, intelligent chatbots, and robust APIs. With expertise in Docker, Dokku, and multi-platform integration, I ensure every project runs smoothly in production. Here are some of my notable implementations."
