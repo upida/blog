@@ -68,9 +68,7 @@ const getIconName = (label: string) => {
         class="h-12 md:h-16 rounded-lg animate-pulse"
       ></div>
     </div>
-    <h1 v-else class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 max-w-3xl leading-tight font-sans" :style="{ color: isDark ? 'white' : 'black' }">
-      {{ title }}
-    </h1>
+    <h2 v-else class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 max-w-3xl leading-tight font-sans words-break" :style="{ color: isDark ? 'white' : 'black' }" v-html="title"></h2>
 
     <!-- Description -->
     <div v-if="isLoading" class="mb-12 w-full">

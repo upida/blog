@@ -11,13 +11,47 @@ const isDark = inject('isDark', ref(false)) as Ref<boolean>
 const appConfig = useAppConfig()
 const picture = computed(() => appConfig.global?.picture)
 
+// Define content data type
+interface ContentData {
+  title?: string
+  description?: string
+  seo?: {
+    title?: string
+    description?: string
+    image?: string
+  }
+  hero?: {
+    links?: any[]
+  }
+  about?: {
+    title?: string
+    description?: string
+  }
+  experience?: {
+    title?: string
+    items?: any[]
+  }
+  projects?: {
+    title?: string
+    description?: string
+  }
+  faq?: {
+    title?: string
+    categories?: any[]
+  }
+}
+
+interface ProjectsData {
+  projects?: any[]
+}
+
 // Query content data
 const pageData = ref<any>(null)
 const isLoading = ref(true)
 
 // Load data from server endpoint
-const { data: contentData } = useFetch('/api/content')
-const { data: projectsData } = useFetch('/api/projects')
+const { data: contentData } = useFetch<ContentData>('/api/content')
+const { data: projectsData } = useFetch<ProjectsData>('/api/projects')
 
 // Setup page-specific SEO
 const updateHeadSEO = () => {

@@ -2,7 +2,7 @@
 seo:
   title: "Upida - Software Developer"
   description: "Welcome to my portfolio! I'm Upida, a Software developer based in Yogyakarta, Indonesia. I specialize in building scalable web applications and backend systems using modern technologies."
-title: "Hey, I'm Upida Salma\nSoftware Developer"
+title: "Hey, I'm Upida <span class=\"text-yellow-500\">Salma</span><br>Software Developer"
 description: "I build intelligent chatbots with LLMs and extensive social media integrations. I create scalable dashboards and web apps using Laravel Inertia Vue, Go, and Nuxt. Let's discuss your project needs. Based in Yogyakarta, Indonesia."
 hero:
   links:
