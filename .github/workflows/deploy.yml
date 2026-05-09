@@ -13,7 +13,8 @@ jobs:
         run: |
           mkdir ~/.ssh
           echo "${{ vars.DOKKU_SSH_PRIVATE_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_ed25519
-
+          chmod 600 ~/.ssh/id_ed25519
+          
       - name: Add Dokku host to known_hosts
         run: |
           ssh-keyscan -H ${{ secrets.DOKKU_HOST }} >> ~/.ssh/known_hosts
