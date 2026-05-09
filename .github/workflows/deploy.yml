@@ -17,7 +17,9 @@ jobs:
           ssh-add /tmp/dokku_deploy_key
 
       - name: Add Dokku host to known_hosts
-        run: ssh-keyscan -H ${{ secrets.DOKKU_HOST }} >> ~/.ssh/known_hosts
+        run: |
+          mkdir ~/.ssh
+          ssh-keyscan -H ${{ secrets.DOKKU_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy
         run: |
           git remote add dokku dokku@${{ secrets.DOKKU_HOST }}:${{ secrets.DOKKU_APP }} || true
