@@ -11,14 +11,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Decode SSH key and start ssh-agent
         run: |
-          echo "${{ vars.DOKKU_SSH_PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/dokku_deploy_key
-          chmod 600 /tmp/dokku_deploy_key
-          eval "$(ssh-agent -s)"
-          ssh-add /tmp/dokku_deploy_key
+          mkdir ~/.ssh
+          echo "${{ vars.DOKKU_SSH_PRIVATE_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_ed25519
 
       - name: Add Dokku host to known_hosts
         run: |
-          mkdir ~/.ssh
           ssh-keyscan -H ${{ secrets.DOKKU_HOST }} >> ~/.ssh/known_hosts
           ssh -vvv dokku@${{ secrets.DOKKU_HOST }}
       - name: Deploy
