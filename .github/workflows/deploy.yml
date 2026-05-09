@@ -18,7 +18,5 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.DOKKU_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy
         run: |
-          cat ~/.ssh/id_ed25519
-          ssh -vvv dokku@${{ secrets.DOKKU_HOST }}
           git remote add dokku dokku@${{ secrets.DOKKU_HOST }}:${{ secrets.DOKKU_APP }} || true
           git push dokku main --force
